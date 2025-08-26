@@ -22,8 +22,8 @@ const SL_PCT = -0.003; // -0.3%
 const MIN_CHANGE_PCT = 0.002; // 0.2%
 const TAKER_FEE = 0.0006; // 0.06%
 
-const PUBLIC_WS_URL = 'wss://ws.bitget.com/v2/ws/public';
-const PRIVATE_WS_URL = 'wss://ws.bitget.com/v2/ws/private';
+const PUBLIC_WS_URL = 'wss://wspap.bitget.com/v2/ws/public';
+const PRIVATE_WS_URL = 'wss://wspap.bitget.com/v2/ws/private';
 
 // 가격 배열 (실시간 캔들로 업데이트)
 let prices: number[] = []; // 최근 종가 배열 (최대 LONG_MA_PERIOD 유지)
@@ -60,6 +60,7 @@ function getAuthHeaders(
     'ACCESS-TIMESTAMP': timestamp,
     'ACCESS-PASSPHRASE': PASSPHRASE,
     'Content-Type': 'application/json',
+    paptrading: '1',
     locale: 'en-US',
   };
 }
